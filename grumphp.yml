@@ -1,0 +1,45 @@
+grumphp:
+  tasks:
+    composer_normalize: ~
+    composer: ~
+    yamllint:
+      ignore_patterns:
+        - "vendor"
+    jsonlint:
+      ignore_patterns:
+        - "vendor/*"
+    xmllint:
+      ignore_patterns:
+        - "vendor"
+    phplint: ~
+    #    phpunit:
+    #      always_execute: true
+    psalm:
+      ignore_patterns:
+        - "vendor"
+        - "public"
+        - "tests"
+    phpcs:
+      standard: PSR12
+      ignore_patterns:
+        - "vendor"
+        - "public"
+        - "tests"
+    phpcpd:
+      directory: [ './src' ]
+    git_commit_message:
+      allow_empty_message: false
+      enforce_capitalized_subject: false
+      type_scope_conventions:
+        - types:
+            - build
+            - ci
+            - chore
+            - docs
+            - feat
+            - fix
+            - perf
+            - refactor
+            - revert
+            - style
+            - test
